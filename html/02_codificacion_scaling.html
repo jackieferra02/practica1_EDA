@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>02_codificacion_scaling</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>02_Codificacion_Scaling</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7515,7 +7515,7 @@ Máster Universitario de Ciencia de Datos (MUCD) - CUNEF Universidad.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
@@ -7550,17 +7550,17 @@ Máster Universitario de Ciencia de Datos (MUCD) - CUNEF Universidad.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [92]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_application_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/train_preprocessed_missing_outlier.csv"</span><span class="p">)</span>
 <span class="n">df_application_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/test_preprocessed_missing_outlier.csv"</span><span class="p">)</span>
 
-<span class="c1"># Mostrar las primeras filas del DataFrame para verificación</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Primeras filas del conjunto de entrenamiento:"</span><span class="p">)</span>
+<span class="c1"># Display the first rows of the DataFrame for verification</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"First rows of the training set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_train</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Primeras filas del conjunto de prueba:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"First rows of the test set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_test</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -7574,7 +7574,7 @@ Máster Universitario de Ciencia de Datos (MUCD) - CUNEF Universidad.</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Primeras filas del conjunto de entrenamiento:
+<pre>First rows of the training set:
    COMMONAREA_MEDI  COMMONAREA_AVG  COMMONAREA_MODE  NONLIVINGAPARTMENTS_MODE  \
 0         -99.0000        -99.0000         -99.0000                  -99.0000   
 1           0.0172          0.0171           0.0173                    0.0039   
@@ -7583,10 +7583,10 @@ Máster Universitario de Ciencia de Datos (MUCD) - CUNEF Universidad.</p>
 4           0.0109          0.0109           0.0110                    0.0000   
 
    NONLIVINGAPARTMENTS_AVG  NONLIVINGAPARTMENTS_MEDI FONDKAPREMONT_MODE  \
-0                 -99.0000                  -99.0000          SIN VALOR   
+0                 -99.0000                  -99.0000           NO VALUE   
 1                   0.0039                    0.0039   reg oper account   
-2                 -99.0000                  -99.0000          SIN VALOR   
-3                   0.0000                    0.0000          SIN VALOR   
+2                 -99.0000                  -99.0000           NO VALUE   
+3                   0.0000                    0.0000           NO VALUE   
 4                   0.0000                    0.0000   reg oper account   
 
    LIVINGAPARTMENTS_MODE  LIVINGAPARTMENTS_AVG  LIVINGAPARTMENTS_MEDI  ...  \
@@ -7618,7 +7618,7 @@ Máster Universitario de Ciencia de Datos (MUCD) - CUNEF Universidad.</p>
 4         Pensioner      237052       0  
 
 [5 rows x 122 columns]
-Primeras filas del conjunto de prueba:
+First rows of the test set:
    COMMONAREA_MEDI  COMMONAREA_AVG  COMMONAREA_MODE  NONLIVINGAPARTMENTS_MODE  \
 0         -99.0000        -99.0000         -99.0000                  -99.0000   
 1         -99.0000        -99.0000         -99.0000                  -99.0000   
@@ -7627,10 +7627,10 @@ Primeras filas del conjunto de prueba:
 4           0.0000          0.0000           0.0000                    0.0000   
 
    NONLIVINGAPARTMENTS_AVG  NONLIVINGAPARTMENTS_MEDI FONDKAPREMONT_MODE  \
-0                 -99.0000                  -99.0000          SIN VALOR   
-1                 -99.0000                  -99.0000          SIN VALOR   
+0                 -99.0000                  -99.0000           NO VALUE   
+1                 -99.0000                  -99.0000           NO VALUE   
 2                   0.0116                    0.0116   reg oper account   
-3                 -99.0000                  -99.0000          SIN VALOR   
+3                 -99.0000                  -99.0000           NO VALUE   
 4                   0.0000                    0.0000   reg oper account   
 
    LIVINGAPARTMENTS_MODE  LIVINGAPARTMENTS_AVG  LIVINGAPARTMENTS_MEDI  ...  \
@@ -7672,7 +7672,7 @@ Primeras filas del conjunto de prueba:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [94]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_application_train</span><span class="o">.</span><span class="n">columns</span>
@@ -7686,7 +7686,7 @@ Primeras filas del conjunto de prueba:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[94]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Index(['COMMONAREA_MEDI', 'COMMONAREA_AVG', 'COMMONAREA_MODE',
        'NONLIVINGAPARTMENTS_MODE', 'NONLIVINGAPARTMENTS_AVG',
@@ -7707,7 +7707,7 @@ Primeras filas del conjunto de prueba:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [96]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_application_train</span><span class="o">.</span><span class="n">dtypes</span>
@@ -7721,7 +7721,7 @@ Primeras filas del conjunto de prueba:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[96]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>COMMONAREA_MEDI             float64
 COMMONAREA_AVG              float64
@@ -7760,7 +7760,7 @@ Length: 122, dtype: object</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [99]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df_application_train</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -7774,7 +7774,7 @@ Length: 122, dtype: object</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[99]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>0    226148
 1     19860
@@ -7788,18 +7788,18 @@ Name: TARGET, dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [101]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Asegurar que la columna 'TARGET' está tipificada como entero</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ensure the 'TARGET' column is typed as an integer</span>
 <span class="n">df_application_train</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_application_train</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">df_application_test</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_application_test</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-<span class="c1"># Verificar los resultados</span>
+<span class="c1"># Verify the results</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_train</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_test</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
-<span class="c1"># Mostrar la distribución de valores en 'TARGET'</span>
+<span class="c1"># Display the distribution of values in 'TARGET'</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_train</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_application_test</span><span class="p">[</span><span class="s1">'TARGET'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 </pre></div>
@@ -7843,7 +7843,7 @@ Name: TARGET, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">df_application_train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'TARGET'</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -7883,7 +7883,7 @@ Name: TARGET, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [108]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">list_columns_cat</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="s2">"object"</span><span class="p">,</span> <span class="s2">"category"</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -7904,7 +7904,7 @@ Name: TARGET, dtype: int64
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>['FONDKAPREMONT_MODE', 'WALLSMATERIAL_MODE', 'HOUSETYPE_MODE', 'EMERGENCYSTATE_MODE', 'OCCUPATION_TYPE', 'NAME_TYPE_SUITE', 'NAME_CONTRACT_TYPE', 'CODE_GENDER', 'FLAG_OWN_CAR', 'FLAG_OWN_REALTY', 'WEEKDAY_APPR_PROCESS_START', 'ORGANIZATION_TYPE', 'NAME_HOUSING_TYPE', 'NAME_FAMILY_STATUS', 'NAME_EDUCATION_TYPE', 'NAME_INCOME_TYPE']
-['FLAG_DOCUMENT_9', 'FLOORSMAX_AVG', 'NONLIVINGAPARTMENTS_MEDI', 'FLAG_DOCUMENT_17', 'LANDAREA_MEDI', 'FLAG_DOCUMENT_18', 'REGION_RATING_CLIENT_W_CITY', 'REGION_RATING_CLIENT', 'DEF_60_CNT_SOCIAL_CIRCLE', 'LIVE_REGION_NOT_WORK_REGION', 'ELEVATORS_MODE', 'ENTRANCES_MODE', 'BASEMENTAREA_AVG', 'FLAG_DOCUMENT_21', 'FLAG_WORK_PHONE', 'LIVE_CITY_NOT_WORK_CITY', 'REG_CITY_NOT_LIVE_CITY', 'AMT_CREDIT', 'DAYS_ID_PUBLISH', 'FLAG_DOCUMENT_12', 'DAYS_REGISTRATION', 'LIVINGAPARTMENTS_MEDI', 'AMT_REQ_CREDIT_BUREAU_WEEK', 'ENTRANCES_MEDI', 'DAYS_LAST_PHONE_CHANGE', 'FLAG_EMP_PHONE', 'FLOORSMIN_MEDI', 'CNT_FAM_MEMBERS', 'ELEVATORS_MEDI', 'FLOORSMIN_MODE', 'YEARS_BUILD_AVG', 'REGION_POPULATION_RELATIVE', 'DAYS_BIRTH', 'TOTALAREA_MODE', 'FLAG_DOCUMENT_7', 'FLAG_DOCUMENT_11', 'YEARS_BEGINEXPLUATATION_MEDI', 'ELEVATORS_AVG', 'FLAG_DOCUMENT_20', 'AMT_ANNUITY', 'FLAG_DOCUMENT_13', 'NONLIVINGAREA_MEDI', 'FLAG_DOCUMENT_4', 'REG_REGION_NOT_WORK_REGION', 'DEF_30_CNT_SOCIAL_CIRCLE', 'FLAG_DOCUMENT_5', 'AMT_REQ_CREDIT_BUREAU_QRT', 'FLAG_DOCUMENT_10', 'OBS_60_CNT_SOCIAL_CIRCLE', 'REG_CITY_NOT_WORK_CITY', 'FLAG_MOBIL', 'FLOORSMAX_MEDI', 'YEARS_BUILD_MEDI', 'FLAG_CONT_MOBILE', 'COMMONAREA_MODE', 'AMT_REQ_CREDIT_BUREAU_HOUR', 'APARTMENTS_AVG', 'NONLIVINGAPARTMENTS_MODE', 'HOUR_APPR_PROCESS_START', 'LIVINGAREA_AVG', 'REG_REGION_NOT_LIVE_REGION', 'CNT_CHILDREN', 'EXT_SOURCE_1', 'BASEMENTAREA_MEDI', 'AMT_INCOME_TOTAL', 'AMT_REQ_CREDIT_BUREAU_MON', 'OWN_CAR_AGE', 'LIVINGAREA_MEDI', 'APARTMENTS_MEDI', 'FLAG_PHONE', 'FLAG_DOCUMENT_3', 'FLAG_DOCUMENT_8', 'FLAG_DOCUMENT_16', 'APARTMENTS_MODE', 'LIVINGAPARTMENTS_MODE', 'NONLIVINGAREA_MODE', 'FLAG_DOCUMENT_19', 'YEARS_BUILD_MODE', 'AMT_REQ_CREDIT_BUREAU_YEAR', 'COMMONAREA_MEDI', 'BASEMENTAREA_MODE', 'LIVINGAREA_MODE', 'EXT_SOURCE_2', 'AMT_GOODS_PRICE', 'EXT_SOURCE_3', 'OBS_30_CNT_SOCIAL_CIRCLE', 'FLAG_DOCUMENT_6', 'FLAG_DOCUMENT_2', 'FLAG_DOCUMENT_15', 'FLAG_DOCUMENT_14', 'LANDAREA_AVG', 'AMT_REQ_CREDIT_BUREAU_DAY', 'FLOORSMIN_AVG', 'YEARS_BEGINEXPLUATATION_AVG', 'LANDAREA_MODE', 'NONLIVINGAREA_AVG', 'ENTRANCES_AVG', 'LIVINGAPARTMENTS_AVG', 'NONLIVINGAPARTMENTS_AVG', 'COMMONAREA_AVG', 'DAYS_EMPLOYED', 'SK_ID_CURR', 'YEARS_BEGINEXPLUATATION_MODE', 'FLOORSMAX_MODE', 'FLAG_EMAIL']
+['FLAG_DOCUMENT_15', 'DAYS_BIRTH', 'DAYS_LAST_PHONE_CHANGE', 'FLAG_DOCUMENT_4', 'FLAG_MOBIL', 'DAYS_REGISTRATION', 'ENTRANCES_MODE', 'FLOORSMIN_MEDI', 'LIVINGAPARTMENTS_MEDI', 'FLAG_WORK_PHONE', 'LANDAREA_MEDI', 'AMT_REQ_CREDIT_BUREAU_HOUR', 'LIVINGAPARTMENTS_MODE', 'REGION_POPULATION_RELATIVE', 'COMMONAREA_MODE', 'NONLIVINGAREA_MODE', 'LIVINGAREA_AVG', 'FLAG_DOCUMENT_11', 'AMT_INCOME_TOTAL', 'FLAG_PHONE', 'AMT_REQ_CREDIT_BUREAU_WEEK', 'OWN_CAR_AGE', 'FLAG_DOCUMENT_10', 'EXT_SOURCE_2', 'NONLIVINGAPARTMENTS_AVG', 'EXT_SOURCE_3', 'HOUR_APPR_PROCESS_START', 'YEARS_BUILD_MODE', 'REG_REGION_NOT_LIVE_REGION', 'CNT_CHILDREN', 'FLAG_EMAIL', 'AMT_REQ_CREDIT_BUREAU_DAY', 'LANDAREA_AVG', 'FLAG_DOCUMENT_18', 'APARTMENTS_MODE', 'FLOORSMAX_AVG', 'LIVINGAPARTMENTS_AVG', 'LIVE_REGION_NOT_WORK_REGION', 'FLAG_DOCUMENT_13', 'YEARS_BEGINEXPLUATATION_MEDI', 'AMT_CREDIT', 'YEARS_BUILD_AVG', 'REGION_RATING_CLIENT', 'AMT_REQ_CREDIT_BUREAU_MON', 'AMT_GOODS_PRICE', 'SK_ID_CURR', 'ENTRANCES_AVG', 'FLOORSMIN_AVG', 'FLAG_DOCUMENT_8', 'FLAG_DOCUMENT_20', 'FLAG_DOCUMENT_7', 'EXT_SOURCE_1', 'REGION_RATING_CLIENT_W_CITY', 'AMT_REQ_CREDIT_BUREAU_QRT', 'LIVE_CITY_NOT_WORK_CITY', 'FLOORSMIN_MODE', 'TOTALAREA_MODE', 'REG_REGION_NOT_WORK_REGION', 'FLAG_CONT_MOBILE', 'BASEMENTAREA_AVG', 'AMT_REQ_CREDIT_BUREAU_YEAR', 'FLAG_DOCUMENT_12', 'ELEVATORS_MEDI', 'FLAG_DOCUMENT_5', 'BASEMENTAREA_MODE', 'YEARS_BEGINEXPLUATATION_AVG', 'FLAG_DOCUMENT_6', 'FLAG_DOCUMENT_9', 'FLAG_DOCUMENT_17', 'CNT_FAM_MEMBERS', 'OBS_60_CNT_SOCIAL_CIRCLE', 'NONLIVINGAPARTMENTS_MEDI', 'AMT_ANNUITY', 'ELEVATORS_MODE', 'FLOORSMAX_MEDI', 'FLAG_EMP_PHONE', 'NONLIVINGAPARTMENTS_MODE', 'FLAG_DOCUMENT_16', 'COMMONAREA_AVG', 'YEARS_BUILD_MEDI', 'FLAG_DOCUMENT_19', 'LIVINGAREA_MEDI', 'DAYS_ID_PUBLISH', 'FLAG_DOCUMENT_14', 'DEF_60_CNT_SOCIAL_CIRCLE', 'DEF_30_CNT_SOCIAL_CIRCLE', 'BASEMENTAREA_MEDI', 'NONLIVINGAREA_MEDI', 'APARTMENTS_AVG', 'FLOORSMAX_MODE', 'APARTMENTS_MEDI', 'ENTRANCES_MEDI', 'FLAG_DOCUMENT_21', 'YEARS_BEGINEXPLUATATION_MODE', 'NONLIVINGAREA_AVG', 'REG_CITY_NOT_LIVE_CITY', 'FLAG_DOCUMENT_3', 'COMMONAREA_MEDI', 'FLAG_DOCUMENT_2', 'REG_CITY_NOT_WORK_CITY', 'OBS_30_CNT_SOCIAL_CIRCLE', 'LIVINGAREA_MODE', 'LANDAREA_MODE', 'DAYS_EMPLOYED', 'ELEVATORS_AVG']
 </pre>
 </div>
 </div>
@@ -7926,21 +7926,21 @@ Name: TARGET, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [110]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Verificar el número de categorías en cada variable categórica</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Check the number of categories in each categorical variable</span>
 <span class="k">def</span> <span class="nf">count_categories</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">cat_columns</span><span class="p">):</span>
     <span class="n">cat_counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cat_columns</span><span class="p">:</span>
         <span class="n">cat_counts</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cat_counts</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># Contar las categorías en las variables categóricas de X_train</span>
+<span class="c1"># Count the categories in the categorical variables of X_train</span>
 <span class="n">category_counts</span> <span class="o">=</span> <span class="n">count_categories</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">list_columns_cat</span><span class="p">)</span>
 
-<span class="c1"># Mostrar el número de categorías en cada variable categórica</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Número de categorías en cada variable categórica:"</span><span class="p">)</span>
+<span class="c1"># Display the number of categories in each categorical variable</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Number of categories in each categorical variable:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">category_counts</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7954,7 +7954,7 @@ Name: TARGET, dtype: int64
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Número de categorías en cada variable categórica:
+<pre>Number of categories in each categorical variable:
 ORGANIZATION_TYPE             58
 OCCUPATION_TYPE               19
 WALLSMATERIAL_MODE             8
@@ -7997,18 +7997,18 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [112]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Definir umbrales para decidir el tipo de codificación</span>
-<span class="n">threshold_one_hot</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Puedes ajustar este valor según tus necesidades</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Define thresholds to decide the type of encoding</span>
+<span class="n">threshold_one_hot</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># We can adjust this value according to our needs, here it made sense to apply OH for 10 variables</span>
 
-<span class="c1"># Variables para One-Hot Encoding y Target Encoding</span>
+<span class="c1"># Variables for One-Hot Encoding and Target Encoding</span>
 <span class="n">one_hot_columns</span> <span class="o">=</span> <span class="n">category_counts</span><span class="p">[</span><span class="n">category_counts</span> <span class="o">&lt;=</span> <span class="n">threshold_one_hot</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">target_encoding_columns</span> <span class="o">=</span> <span class="n">category_counts</span><span class="p">[</span><span class="n">category_counts</span> <span class="o">&gt;</span> <span class="n">threshold_one_hot</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Variables para One-Hot Encoding:"</span><span class="p">,</span> <span class="n">one_hot_columns</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Variables para Target Encoding:"</span><span class="p">,</span> <span class="n">target_encoding_columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Variables for One-Hot Encoding:"</span><span class="p">,</span> <span class="n">one_hot_columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Variables for Target Encoding:"</span><span class="p">,</span> <span class="n">target_encoding_columns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8021,8 +8021,8 @@ dtype: int64
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Variables para One-Hot Encoding: ['WALLSMATERIAL_MODE', 'NAME_TYPE_SUITE', 'NAME_INCOME_TYPE', 'WEEKDAY_APPR_PROCESS_START', 'NAME_HOUSING_TYPE', 'NAME_FAMILY_STATUS', 'FONDKAPREMONT_MODE', 'NAME_EDUCATION_TYPE', 'HOUSETYPE_MODE', 'EMERGENCYSTATE_MODE', 'CODE_GENDER', 'NAME_CONTRACT_TYPE', 'FLAG_OWN_CAR', 'FLAG_OWN_REALTY']
-Variables para Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
+<pre>Variables for One-Hot Encoding: ['WALLSMATERIAL_MODE', 'NAME_TYPE_SUITE', 'NAME_INCOME_TYPE', 'WEEKDAY_APPR_PROCESS_START', 'NAME_HOUSING_TYPE', 'NAME_FAMILY_STATUS', 'FONDKAPREMONT_MODE', 'NAME_EDUCATION_TYPE', 'HOUSETYPE_MODE', 'EMERGENCYSTATE_MODE', 'CODE_GENDER', 'NAME_CONTRACT_TYPE', 'FLAG_OWN_CAR', 'FLAG_OWN_REALTY']
+Variables for Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
 </pre>
 </div>
 </div>
@@ -8033,39 +8033,39 @@ Variables para Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [114]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Lista de variables para One-Hot Encoding</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># List of variables for One-Hot Encoding</span>
 <span class="n">one_hot_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'WALLSMATERIAL_MODE'</span><span class="p">,</span> <span class="s1">'NAME_TYPE_SUITE'</span><span class="p">,</span> <span class="s1">'NAME_INCOME_TYPE'</span><span class="p">,</span> <span class="s1">'WEEKDAY_APPR_PROCESS_START'</span><span class="p">,</span> 
                    <span class="s1">'NAME_HOUSING_TYPE'</span><span class="p">,</span> <span class="s1">'NAME_FAMILY_STATUS'</span><span class="p">,</span> <span class="s1">'FONDKAPREMONT_MODE'</span><span class="p">,</span> <span class="s1">'NAME_EDUCATION_TYPE'</span><span class="p">,</span> 
                    <span class="s1">'HOUSETYPE_MODE'</span><span class="p">,</span> <span class="s1">'EMERGENCYSTATE_MODE'</span><span class="p">,</span> <span class="s1">'CODE_GENDER'</span><span class="p">,</span> <span class="s1">'NAME_CONTRACT_TYPE'</span><span class="p">,</span> <span class="s1">'FLAG_OWN_CAR'</span><span class="p">,</span> 
                    <span class="s1">'FLAG_OWN_REALTY'</span><span class="p">]</span>
 
-<span class="c1"># Aplicar One-Hot Encoding</span>
+<span class="c1"># Apply One-Hot Encoding</span>
 <span class="n">one_hot_encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)</span>
 <span class="n">one_hot_encoded</span> <span class="o">=</span> <span class="n">one_hot_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">one_hot_columns</span><span class="p">])</span>
 
-<span class="c1"># Crear un DataFrame con las variables One-Hot Encoded</span>
+<span class="c1"># Create a DataFrame with the One-Hot Encoded variables</span>
 <span class="n">one_hot_encoded_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">one_hot_encoded</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">one_hot_encoder</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(</span><span class="n">one_hot_columns</span><span class="p">))</span>
 
-<span class="c1"># Combinar el DataFrame original con las variables One-Hot Encoded</span>
+<span class="c1"># Combine the original DataFrame with the One-Hot Encoded variables</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">one_hot_columns</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">X_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">one_hot_encoded_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># Lista de variables para Target Encoding</span>
+<span class="c1"># List of variables for Target Encoding</span>
 <span class="n">target_encoding_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ORGANIZATION_TYPE'</span><span class="p">,</span> <span class="s1">'OCCUPATION_TYPE'</span><span class="p">]</span>
 
-<span class="c1"># Aplicar Target Encoding</span>
+<span class="c1"># Apply Target Encoding</span>
 <span class="n">target_encoder</span> <span class="o">=</span> <span class="n">TargetEncoder</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="n">target_encoding_columns</span><span class="p">)</span>
 <span class="n">X_train</span><span class="p">[</span><span class="n">target_encoding_columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">target_encoding_columns</span><span class="p">],</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># Verificar las primeras filas del DataFrame después de One-Hot Encoding y Target Encoding</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Primeras filas del DataFrame después de One-Hot Encoding y Target Encoding:"</span><span class="p">)</span>
+<span class="c1"># Verify the first rows of the DataFrame after One-Hot Encoding and Target Encoding</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"First rows of the DataFrame after One-Hot Encoding and Target Encoding:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="c1"># Verificar las dimensiones del DataFrame</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Dimensiones del DataFrame:"</span><span class="p">)</span>
+<span class="c1"># Verify the dimensions of the DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dimensions of the DataFrame:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8079,7 +8079,7 @@ Variables para Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Primeras filas del DataFrame después de One-Hot Encoding y Target Encoding:
+<pre>First rows of the DataFrame after One-Hot Encoding and Target Encoding:
    COMMONAREA_MEDI  COMMONAREA_AVG  COMMONAREA_MODE  NONLIVINGAPARTMENTS_MODE  \
 0         -99.0000        -99.0000         -99.0000                  -99.0000   
 1           0.0172          0.0171           0.0173                    0.0039   
@@ -8108,12 +8108,12 @@ Variables para Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
 3                            1.0                              0.0   
 4                            1.0                              0.0   
 
-   HOUSETYPE_MODE_terraced house  EMERGENCYSTATE_MODE_SIN VALOR  \
-0                            0.0                            0.0   
-1                            0.0                            0.0   
-2                            0.0                            1.0   
-3                            0.0                            0.0   
-4                            0.0                            0.0   
+   HOUSETYPE_MODE_terraced house  EMERGENCYSTATE_MODE_No  \
+0                            0.0                     1.0   
+1                            0.0                     1.0   
+2                            0.0                     0.0   
+3                            0.0                     1.0   
+4                            0.0                     1.0   
 
    EMERGENCYSTATE_MODE_Yes  CODE_GENDER_M  CODE_GENDER_XNA  \
 0                      0.0            1.0              0.0   
@@ -8130,7 +8130,7 @@ Variables para Target Encoding: ['ORGANIZATION_TYPE', 'OCCUPATION_TYPE']
 4                                 0.0             0.0                1.0  
 
 [5 rows x 162 columns]
-Dimensiones del DataFrame:
+Dimensions of the DataFrame:
 (246008, 162)
 </pre>
 </div>
@@ -8142,7 +8142,7 @@ Dimensiones del DataFrame:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [116]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
@@ -8156,7 +8156,7 @@ Dimensiones del DataFrame:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[116]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'COMMONAREA_MEDI': dtype('float64'),
  'COMMONAREA_AVG': dtype('float64'),
@@ -8267,16 +8267,16 @@ Dimensiones del DataFrame:
  'SK_ID_CURR': dtype('int64'),
  'WALLSMATERIAL_MODE_Mixed': dtype('float64'),
  'WALLSMATERIAL_MODE_Monolithic': dtype('float64'),
+ 'WALLSMATERIAL_MODE_NO VALUE': dtype('float64'),
  'WALLSMATERIAL_MODE_Others': dtype('float64'),
  'WALLSMATERIAL_MODE_Panel': dtype('float64'),
- 'WALLSMATERIAL_MODE_SIN VALOR': dtype('float64'),
  'WALLSMATERIAL_MODE_Stone, brick': dtype('float64'),
  'WALLSMATERIAL_MODE_Wooden': dtype('float64'),
  'NAME_TYPE_SUITE_Family': dtype('float64'),
  'NAME_TYPE_SUITE_Group of people': dtype('float64'),
+ 'NAME_TYPE_SUITE_NO VALUE': dtype('float64'),
  'NAME_TYPE_SUITE_Other_A': dtype('float64'),
  'NAME_TYPE_SUITE_Other_B': dtype('float64'),
- 'NAME_TYPE_SUITE_SIN VALOR': dtype('float64'),
  'NAME_TYPE_SUITE_Spouse, partner': dtype('float64'),
  'NAME_TYPE_SUITE_Unaccompanied': dtype('float64'),
  'NAME_INCOME_TYPE_Commercial associate': dtype('float64'),
@@ -8313,7 +8313,7 @@ Dimensiones del DataFrame:
  'HOUSETYPE_MODE_block of flats': dtype('float64'),
  'HOUSETYPE_MODE_specific housing': dtype('float64'),
  'HOUSETYPE_MODE_terraced house': dtype('float64'),
- 'EMERGENCYSTATE_MODE_SIN VALOR': dtype('float64'),
+ 'EMERGENCYSTATE_MODE_No': dtype('float64'),
  'EMERGENCYSTATE_MODE_Yes': dtype('float64'),
  'CODE_GENDER_M': dtype('float64'),
  'CODE_GENDER_XNA': dtype('float64'),
@@ -8358,10 +8358,10 @@ Dimensiones del DataFrame:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [119]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Columnas disponibles en X_train:"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Available columns in X_train:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8375,8 +8375,8 @@ Dimensiones del DataFrame:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Columnas disponibles en X_train:
-['COMMONAREA_MEDI', 'COMMONAREA_AVG', 'COMMONAREA_MODE', 'NONLIVINGAPARTMENTS_MODE', 'NONLIVINGAPARTMENTS_AVG', 'NONLIVINGAPARTMENTS_MEDI', 'LIVINGAPARTMENTS_MODE', 'LIVINGAPARTMENTS_AVG', 'LIVINGAPARTMENTS_MEDI', 'FLOORSMIN_AVG', 'FLOORSMIN_MODE', 'FLOORSMIN_MEDI', 'YEARS_BUILD_MEDI', 'YEARS_BUILD_MODE', 'YEARS_BUILD_AVG', 'OWN_CAR_AGE', 'LANDAREA_MEDI', 'LANDAREA_MODE', 'LANDAREA_AVG', 'BASEMENTAREA_MEDI', 'BASEMENTAREA_AVG', 'BASEMENTAREA_MODE', 'EXT_SOURCE_1', 'NONLIVINGAREA_MODE', 'NONLIVINGAREA_AVG', 'NONLIVINGAREA_MEDI', 'ELEVATORS_MEDI', 'ELEVATORS_AVG', 'ELEVATORS_MODE', 'APARTMENTS_MEDI', 'APARTMENTS_AVG', 'APARTMENTS_MODE', 'ENTRANCES_MEDI', 'ENTRANCES_AVG', 'ENTRANCES_MODE', 'LIVINGAREA_AVG', 'LIVINGAREA_MODE', 'LIVINGAREA_MEDI', 'FLOORSMAX_MODE', 'FLOORSMAX_MEDI', 'FLOORSMAX_AVG', 'YEARS_BEGINEXPLUATATION_MODE', 'YEARS_BEGINEXPLUATATION_MEDI', 'YEARS_BEGINEXPLUATATION_AVG', 'TOTALAREA_MODE', 'OCCUPATION_TYPE', 'EXT_SOURCE_3', 'AMT_REQ_CREDIT_BUREAU_HOUR', 'AMT_REQ_CREDIT_BUREAU_DAY', 'AMT_REQ_CREDIT_BUREAU_WEEK', 'AMT_REQ_CREDIT_BUREAU_MON', 'AMT_REQ_CREDIT_BUREAU_QRT', 'AMT_REQ_CREDIT_BUREAU_YEAR', 'OBS_30_CNT_SOCIAL_CIRCLE', 'DEF_30_CNT_SOCIAL_CIRCLE', 'OBS_60_CNT_SOCIAL_CIRCLE', 'DEF_60_CNT_SOCIAL_CIRCLE', 'EXT_SOURCE_2', 'AMT_GOODS_PRICE', 'AMT_ANNUITY', 'CNT_FAM_MEMBERS', 'DAYS_LAST_PHONE_CHANGE', 'CNT_CHILDREN', 'FLAG_DOCUMENT_8', 'FLAG_DOCUMENT_2', 'FLAG_DOCUMENT_3', 'FLAG_DOCUMENT_4', 'FLAG_DOCUMENT_5', 'FLAG_DOCUMENT_6', 'FLAG_DOCUMENT_7', 'FLAG_DOCUMENT_9', 'FLAG_DOCUMENT_21', 'FLAG_DOCUMENT_10', 'FLAG_DOCUMENT_11', 'FLAG_DOCUMENT_13', 'FLAG_DOCUMENT_14', 'FLAG_DOCUMENT_15', 'FLAG_DOCUMENT_16', 'FLAG_DOCUMENT_17', 'FLAG_DOCUMENT_18', 'FLAG_DOCUMENT_19', 'FLAG_DOCUMENT_20', 'FLAG_DOCUMENT_12', 'AMT_CREDIT', 'AMT_INCOME_TOTAL', 'FLAG_PHONE', 'LIVE_CITY_NOT_WORK_CITY', 'REG_CITY_NOT_WORK_CITY', 'REG_CITY_NOT_LIVE_CITY', 'LIVE_REGION_NOT_WORK_REGION', 'REG_REGION_NOT_WORK_REGION', 'REG_REGION_NOT_LIVE_REGION', 'HOUR_APPR_PROCESS_START', 'REGION_RATING_CLIENT_W_CITY', 'REGION_RATING_CLIENT', 'FLAG_EMAIL', 'FLAG_CONT_MOBILE', 'ORGANIZATION_TYPE', 'FLAG_WORK_PHONE', 'FLAG_EMP_PHONE', 'FLAG_MOBIL', 'DAYS_ID_PUBLISH', 'DAYS_REGISTRATION', 'DAYS_EMPLOYED', 'DAYS_BIRTH', 'REGION_POPULATION_RELATIVE', 'SK_ID_CURR', 'WALLSMATERIAL_MODE_Mixed', 'WALLSMATERIAL_MODE_Monolithic', 'WALLSMATERIAL_MODE_Others', 'WALLSMATERIAL_MODE_Panel', 'WALLSMATERIAL_MODE_SIN VALOR', 'WALLSMATERIAL_MODE_Stone, brick', 'WALLSMATERIAL_MODE_Wooden', 'NAME_TYPE_SUITE_Family', 'NAME_TYPE_SUITE_Group of people', 'NAME_TYPE_SUITE_Other_A', 'NAME_TYPE_SUITE_Other_B', 'NAME_TYPE_SUITE_SIN VALOR', 'NAME_TYPE_SUITE_Spouse, partner', 'NAME_TYPE_SUITE_Unaccompanied', 'NAME_INCOME_TYPE_Commercial associate', 'NAME_INCOME_TYPE_Maternity leave', 'NAME_INCOME_TYPE_Pensioner', 'NAME_INCOME_TYPE_State servant', 'NAME_INCOME_TYPE_Student', 'NAME_INCOME_TYPE_Unemployed', 'NAME_INCOME_TYPE_Working', 'WEEKDAY_APPR_PROCESS_START_MONDAY', 'WEEKDAY_APPR_PROCESS_START_SATURDAY', 'WEEKDAY_APPR_PROCESS_START_SUNDAY', 'WEEKDAY_APPR_PROCESS_START_THURSDAY', 'WEEKDAY_APPR_PROCESS_START_TUESDAY', 'WEEKDAY_APPR_PROCESS_START_WEDNESDAY', 'NAME_HOUSING_TYPE_House / apartment', 'NAME_HOUSING_TYPE_Municipal apartment', 'NAME_HOUSING_TYPE_Office apartment', 'NAME_HOUSING_TYPE_Rented apartment', 'NAME_HOUSING_TYPE_With parents', 'NAME_FAMILY_STATUS_Married', 'NAME_FAMILY_STATUS_Separated', 'NAME_FAMILY_STATUS_Single / not married', 'NAME_FAMILY_STATUS_Unknown', 'NAME_FAMILY_STATUS_Widow', 'FONDKAPREMONT_MODE_not specified', 'FONDKAPREMONT_MODE_org spec account', 'FONDKAPREMONT_MODE_reg oper account', 'FONDKAPREMONT_MODE_reg oper spec account', 'NAME_EDUCATION_TYPE_Higher education', 'NAME_EDUCATION_TYPE_Incomplete higher', 'NAME_EDUCATION_TYPE_Lower secondary', 'NAME_EDUCATION_TYPE_Secondary / secondary special', 'HOUSETYPE_MODE_block of flats', 'HOUSETYPE_MODE_specific housing', 'HOUSETYPE_MODE_terraced house', 'EMERGENCYSTATE_MODE_SIN VALOR', 'EMERGENCYSTATE_MODE_Yes', 'CODE_GENDER_M', 'CODE_GENDER_XNA', 'NAME_CONTRACT_TYPE_Revolving loans', 'FLAG_OWN_CAR_Y', 'FLAG_OWN_REALTY_Y']
+<pre>Available columns in X_train:
+['COMMONAREA_MEDI', 'COMMONAREA_AVG', 'COMMONAREA_MODE', 'NONLIVINGAPARTMENTS_MODE', 'NONLIVINGAPARTMENTS_AVG', 'NONLIVINGAPARTMENTS_MEDI', 'LIVINGAPARTMENTS_MODE', 'LIVINGAPARTMENTS_AVG', 'LIVINGAPARTMENTS_MEDI', 'FLOORSMIN_AVG', 'FLOORSMIN_MODE', 'FLOORSMIN_MEDI', 'YEARS_BUILD_MEDI', 'YEARS_BUILD_MODE', 'YEARS_BUILD_AVG', 'OWN_CAR_AGE', 'LANDAREA_MEDI', 'LANDAREA_MODE', 'LANDAREA_AVG', 'BASEMENTAREA_MEDI', 'BASEMENTAREA_AVG', 'BASEMENTAREA_MODE', 'EXT_SOURCE_1', 'NONLIVINGAREA_MODE', 'NONLIVINGAREA_AVG', 'NONLIVINGAREA_MEDI', 'ELEVATORS_MEDI', 'ELEVATORS_AVG', 'ELEVATORS_MODE', 'APARTMENTS_MEDI', 'APARTMENTS_AVG', 'APARTMENTS_MODE', 'ENTRANCES_MEDI', 'ENTRANCES_AVG', 'ENTRANCES_MODE', 'LIVINGAREA_AVG', 'LIVINGAREA_MODE', 'LIVINGAREA_MEDI', 'FLOORSMAX_MODE', 'FLOORSMAX_MEDI', 'FLOORSMAX_AVG', 'YEARS_BEGINEXPLUATATION_MODE', 'YEARS_BEGINEXPLUATATION_MEDI', 'YEARS_BEGINEXPLUATATION_AVG', 'TOTALAREA_MODE', 'OCCUPATION_TYPE', 'EXT_SOURCE_3', 'AMT_REQ_CREDIT_BUREAU_HOUR', 'AMT_REQ_CREDIT_BUREAU_DAY', 'AMT_REQ_CREDIT_BUREAU_WEEK', 'AMT_REQ_CREDIT_BUREAU_MON', 'AMT_REQ_CREDIT_BUREAU_QRT', 'AMT_REQ_CREDIT_BUREAU_YEAR', 'OBS_30_CNT_SOCIAL_CIRCLE', 'DEF_30_CNT_SOCIAL_CIRCLE', 'OBS_60_CNT_SOCIAL_CIRCLE', 'DEF_60_CNT_SOCIAL_CIRCLE', 'EXT_SOURCE_2', 'AMT_GOODS_PRICE', 'AMT_ANNUITY', 'CNT_FAM_MEMBERS', 'DAYS_LAST_PHONE_CHANGE', 'CNT_CHILDREN', 'FLAG_DOCUMENT_8', 'FLAG_DOCUMENT_2', 'FLAG_DOCUMENT_3', 'FLAG_DOCUMENT_4', 'FLAG_DOCUMENT_5', 'FLAG_DOCUMENT_6', 'FLAG_DOCUMENT_7', 'FLAG_DOCUMENT_9', 'FLAG_DOCUMENT_21', 'FLAG_DOCUMENT_10', 'FLAG_DOCUMENT_11', 'FLAG_DOCUMENT_13', 'FLAG_DOCUMENT_14', 'FLAG_DOCUMENT_15', 'FLAG_DOCUMENT_16', 'FLAG_DOCUMENT_17', 'FLAG_DOCUMENT_18', 'FLAG_DOCUMENT_19', 'FLAG_DOCUMENT_20', 'FLAG_DOCUMENT_12', 'AMT_CREDIT', 'AMT_INCOME_TOTAL', 'FLAG_PHONE', 'LIVE_CITY_NOT_WORK_CITY', 'REG_CITY_NOT_WORK_CITY', 'REG_CITY_NOT_LIVE_CITY', 'LIVE_REGION_NOT_WORK_REGION', 'REG_REGION_NOT_WORK_REGION', 'REG_REGION_NOT_LIVE_REGION', 'HOUR_APPR_PROCESS_START', 'REGION_RATING_CLIENT_W_CITY', 'REGION_RATING_CLIENT', 'FLAG_EMAIL', 'FLAG_CONT_MOBILE', 'ORGANIZATION_TYPE', 'FLAG_WORK_PHONE', 'FLAG_EMP_PHONE', 'FLAG_MOBIL', 'DAYS_ID_PUBLISH', 'DAYS_REGISTRATION', 'DAYS_EMPLOYED', 'DAYS_BIRTH', 'REGION_POPULATION_RELATIVE', 'SK_ID_CURR', 'WALLSMATERIAL_MODE_Mixed', 'WALLSMATERIAL_MODE_Monolithic', 'WALLSMATERIAL_MODE_NO VALUE', 'WALLSMATERIAL_MODE_Others', 'WALLSMATERIAL_MODE_Panel', 'WALLSMATERIAL_MODE_Stone, brick', 'WALLSMATERIAL_MODE_Wooden', 'NAME_TYPE_SUITE_Family', 'NAME_TYPE_SUITE_Group of people', 'NAME_TYPE_SUITE_NO VALUE', 'NAME_TYPE_SUITE_Other_A', 'NAME_TYPE_SUITE_Other_B', 'NAME_TYPE_SUITE_Spouse, partner', 'NAME_TYPE_SUITE_Unaccompanied', 'NAME_INCOME_TYPE_Commercial associate', 'NAME_INCOME_TYPE_Maternity leave', 'NAME_INCOME_TYPE_Pensioner', 'NAME_INCOME_TYPE_State servant', 'NAME_INCOME_TYPE_Student', 'NAME_INCOME_TYPE_Unemployed', 'NAME_INCOME_TYPE_Working', 'WEEKDAY_APPR_PROCESS_START_MONDAY', 'WEEKDAY_APPR_PROCESS_START_SATURDAY', 'WEEKDAY_APPR_PROCESS_START_SUNDAY', 'WEEKDAY_APPR_PROCESS_START_THURSDAY', 'WEEKDAY_APPR_PROCESS_START_TUESDAY', 'WEEKDAY_APPR_PROCESS_START_WEDNESDAY', 'NAME_HOUSING_TYPE_House / apartment', 'NAME_HOUSING_TYPE_Municipal apartment', 'NAME_HOUSING_TYPE_Office apartment', 'NAME_HOUSING_TYPE_Rented apartment', 'NAME_HOUSING_TYPE_With parents', 'NAME_FAMILY_STATUS_Married', 'NAME_FAMILY_STATUS_Separated', 'NAME_FAMILY_STATUS_Single / not married', 'NAME_FAMILY_STATUS_Unknown', 'NAME_FAMILY_STATUS_Widow', 'FONDKAPREMONT_MODE_not specified', 'FONDKAPREMONT_MODE_org spec account', 'FONDKAPREMONT_MODE_reg oper account', 'FONDKAPREMONT_MODE_reg oper spec account', 'NAME_EDUCATION_TYPE_Higher education', 'NAME_EDUCATION_TYPE_Incomplete higher', 'NAME_EDUCATION_TYPE_Lower secondary', 'NAME_EDUCATION_TYPE_Secondary / secondary special', 'HOUSETYPE_MODE_block of flats', 'HOUSETYPE_MODE_specific housing', 'HOUSETYPE_MODE_terraced house', 'EMERGENCYSTATE_MODE_No', 'EMERGENCYSTATE_MODE_Yes', 'CODE_GENDER_M', 'CODE_GENDER_XNA', 'NAME_CONTRACT_TYPE_Revolving loans', 'FLAG_OWN_CAR_Y', 'FLAG_OWN_REALTY_Y']
 </pre>
 </div>
 </div>
@@ -8387,12 +8387,12 @@ Dimensiones del DataFrame:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># X_train y X_test son DataFrames codificados y y_train es variable objetivo</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># X_train and X_test are encoded DataFrames, and y_train is the target variable</span>
 
-<span class="c1"># Lista de variables para One-Hot Encoding y Target Encoding (ya codificadas)</span>
+<span class="c1"># List of variables for One-Hot Encoding and Target Encoding (already encoded)</span>
 <span class="n">one_hot_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'WALLSMATERIAL_MODE'</span><span class="p">,</span> <span class="s1">'NAME_TYPE_SUITE'</span><span class="p">,</span> <span class="s1">'NAME_INCOME_TYPE'</span><span class="p">,</span> <span class="s1">'WEEKDAY_APPR_PROCESS_START'</span><span class="p">,</span> 
                    <span class="s1">'NAME_HOUSING_TYPE'</span><span class="p">,</span> <span class="s1">'NAME_FAMILY_STATUS'</span><span class="p">,</span> <span class="s1">'FONDKAPREMONT_MODE'</span><span class="p">,</span> <span class="s1">'NAME_EDUCATION_TYPE'</span><span class="p">,</span> 
                    <span class="s1">'HOUSETYPE_MODE'</span><span class="p">,</span> <span class="s1">'EMERGENCYSTATE_MODE'</span><span class="p">,</span> <span class="s1">'CODE_GENDER'</span><span class="p">,</span> <span class="s1">'NAME_CONTRACT_TYPE'</span><span class="p">,</span> <span class="s1">'FLAG_OWN_CAR'</span><span class="p">,</span> 
@@ -8400,33 +8400,33 @@ Dimensiones del DataFrame:
 
 <span class="n">target_encoding_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'ORGANIZATION_TYPE'</span><span class="p">,</span> <span class="s1">'OCCUPATION_TYPE'</span><span class="p">]</span>
 
-<span class="c1"># Identificar columnas numéricas</span>
+<span class="c1"># Identify numerical columns</span>
 <span class="n">num_vars</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'float64'</span><span class="p">,</span> <span class="s1">'int64'</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">one_hot_columns</span> <span class="o">+</span> <span class="n">target_encoding_columns</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 
-<span class="c1"># Alinear las columnas de X_train y X_test para asegurarse de que tengan el mismo número de características</span>
+<span class="c1"># Align the columns of X_train and X_test to ensure they have the same number of features</span>
 <span class="n">X_train_aligned</span><span class="p">,</span> <span class="n">X_test_aligned</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">align</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s1">'outer'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="c1"># Crear una pipeline para el escalado de las variables numéricas</span>
+<span class="c1"># Create a pipeline for scaling numerical variables</span>
 <span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
     <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
-        <span class="p">(</span><span class="s1">'num'</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">num_vars</span><span class="p">)</span>  <span class="c1"># Escalado de variables numéricas</span>
+        <span class="p">(</span><span class="s1">'num'</span><span class="p">,</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">num_vars</span><span class="p">)</span>  <span class="c1"># Scaling numerical variables</span>
     <span class="p">],</span>
-    <span class="n">remainder</span><span class="o">=</span><span class="s1">'passthrough'</span>  <span class="c1"># Mantener otras columnas sin cambiar</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">'passthrough'</span>  <span class="c1"># Keep other columns unchanged</span>
 <span class="p">)</span>
 
-<span class="c1"># Ajustar el preprocesador en el conjunto de entrenamiento y transformar los datos de entrenamiento y prueba</span>
+<span class="c1"># Fit the preprocessor on the training set and transform the training and test data</span>
 <span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_aligned</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">preprocessor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_aligned</span><span class="p">)</span>
 
-<span class="c1"># Convertir los resultados a DataFrames</span>
+<span class="c1"># Convert the results to DataFrames</span>
 <span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_train_aligned</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X_train</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 <span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_test_aligned</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
-<span class="c1"># Verificar los resultados</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Conjunto de entrenamiento escalado:"</span><span class="p">)</span>
+<span class="c1"># Verify the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaled training set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Conjunto de prueba escalado:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaled test set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8440,7 +8440,7 @@ Dimensiones del DataFrame:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Conjunto de entrenamiento escalado:
+<pre>Scaled training set:
    AMT_ANNUITY  AMT_CREDIT  AMT_GOODS_PRICE  AMT_INCOME_TOTAL  \
 0     0.281381    1.148929         1.052726         -0.129806   
 1     0.066601    0.400337         0.261622          0.181791   
@@ -8505,7 +8505,7 @@ Dimensiones del DataFrame:
 4               0.0  
 
 [5 rows x 176 columns]
-Conjunto de prueba escalado:
+Scaled test set:
   AMT_ANNUITY AMT_CREDIT AMT_GOODS_PRICE AMT_INCOME_TOTAL  \
 0   -0.399892  -0.817851       -0.845924        -0.181739   
 1   -0.659675  -0.179827       -0.225211        -0.268294   
@@ -8556,11 +8556,11 @@ Conjunto de prueba escalado:
 4                   Pensioner                Unaccompanied   
 
   YEARS_BEGINEXPLUATATION_MODE YEARS_BUILD_AVG YEARS_BUILD_MEDI  \
-0                   Core staff          School        SIN VALOR   
-1           Low-skill Laborers   Self-employed        SIN VALOR   
+0                   Core staff          School         NO VALUE   
+1           Low-skill Laborers   Self-employed         NO VALUE   
 2               Medicine staff        Medicine     Stone, brick   
 3                     Managers          Police            Panel   
-4                    SIN VALOR             XNA            Panel   
+4                     NO VALUE             XNA            Panel   
 
   YEARS_BUILD_MODE  
 0         THURSDAY  
@@ -8600,14 +8600,14 @@ Conjunto de prueba escalado:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Verificar la media y desviación estándar</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Estadísticas del conjunto de entrenamiento escalado:"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Verify the mean and standard deviation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Statistics of the scaled training set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Estadísticas del conjunto de prueba escalado:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Statistics of the scaled test set:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -8621,10 +8621,10 @@ Conjunto de prueba escalado:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Estadísticas del conjunto de entrenamiento escalado:
+<pre>Statistics of the scaled training set:
         AMT_ANNUITY    AMT_CREDIT  AMT_GOODS_PRICE  AMT_INCOME_TOTAL  \
 count  2.460080e+05  2.460080e+05     2.460080e+05      2.460080e+05   
-mean   1.207224e-16 -2.819866e-16     1.620140e-15      8.655478e-16   
+mean   9.901062e-17 -1.173892e-16    -1.056808e-16     -5.654733e-17   
 std    1.000002e+00  1.000002e+00     1.000002e+00      1.000002e+00   
 min   -1.875412e+00 -1.375443e+00    -1.454733e+00     -5.504633e-01   
 25%   -7.301300e-01 -8.167332e-01    -8.094111e-01     -2.163613e-01   
@@ -8634,7 +8634,7 @@ max    1.592798e+01  8.569584e+00     9.499281e+00      4.494364e+02
 
        AMT_REQ_CREDIT_BUREAU_DAY  AMT_REQ_CREDIT_BUREAU_HOUR  \
 count               2.460080e+05                2.460080e+05   
-mean               -2.207138e-15               -2.634716e-15   
+mean                1.518158e-17                6.726830e-17   
 std                 1.000002e+00                1.000002e+00   
 min                -2.523377e+00               -2.523383e+00   
 25%                 3.960838e-01                3.961062e-01   
@@ -8644,7 +8644,7 @@ max                 6.614894e-01                5.140653e-01
 
        AMT_REQ_CREDIT_BUREAU_MON  AMT_REQ_CREDIT_BUREAU_QRT  \
 count               2.460080e+05               2.460080e+05   
-mean               -1.882752e-15              -4.102180e-15   
+mean                4.094153e-18               2.479598e-17   
 std                 1.000002e+00               1.000002e+00   
 min                -2.522603e+00              -2.523036e+00   
 25%                 3.883151e-01               3.884757e-01   
@@ -8654,7 +8654,7 @@ max                 1.182202e+00               9.472506e-01
 
        AMT_REQ_CREDIT_BUREAU_WEEK  AMT_REQ_CREDIT_BUREAU_YEAR  ...  \
 count                2.460080e+05                2.460080e+05  ...   
-mean                 2.455370e-15               -6.854095e-17  ...   
+mean                 1.119213e-17                3.420098e-17  ...   
 std                  1.000002e+00                1.000002e+00  ...   
 min                 -2.523349e+00               -2.520198e+00  ...   
 25%                  3.952678e-01                3.409217e-01  ...   
@@ -8713,7 +8713,7 @@ min           0.003162               0.0               0.0
 max           0.161426               0.0               0.0  
 
 [8 rows x 176 columns]
-Estadísticas del conjunto de prueba escalado:
+Statistics of the scaled test set:
          AMT_ANNUITY    AMT_CREDIT  AMT_GOODS_PRICE  AMT_INCOME_TOTAL  \
 count   61503.000000  61503.000000     61503.000000      61503.000000   
 unique   9458.000000   3618.000000       547.000000        852.000000   
@@ -8765,13 +8765,13 @@ freq                                   54608                        31750
         YEARS_BEGINEXPLUATATION_MEDI  YEARS_BEGINEXPLUATATION_MODE  \
 count                          61503                         61503   
 unique                             8                            19   
-top                    Unaccompanied                     SIN VALOR   
+top                    Unaccompanied                      NO VALUE   
 freq                           49626                         19449   
 
                YEARS_BUILD_AVG  YEARS_BUILD_MEDI  YEARS_BUILD_MODE  
 count                    61503             61503             61503  
 unique                      58                 8                 7  
-top     Business Entity Type 3         SIN VALOR           TUESDAY  
+top     Business Entity Type 3          NO VALUE           TUESDAY  
 freq                     13395             31336             10787  
 
 [4 rows x 176 columns]
@@ -8807,19 +8807,19 @@ freq                     13395             31336             10787
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Guardar los DataFrames preprocesados en archivos CSV</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Save the preprocessed DataFrames to CSV files</span>
 <span class="n">X_train_scaled</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/X_train_preprocessing_scaled.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">X_test_scaled</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/X_test_preprocessing_scaled.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># Guardar y_train y y_test</span>
 
+<span class="c1"># Save y_train and y_test</span>
 <span class="n">y_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/y_train_preprocessing_scaled.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">y_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"../data/preprocessed_data/y_test_preprocessing_scaled.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># Verificar los resultados de la operación</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Archivos CSV creados y guardados con éxito."</span><span class="p">)</span>
+<span class="c1"># Verify the results of the operation</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"CSV files successfully created and saved."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8832,7 +8832,7 @@ freq                     13395             31336             10787
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Archivos CSV creados y guardados con éxito.
+<pre>CSV files successfully created and saved.
 </pre>
 </div>
 </div>
