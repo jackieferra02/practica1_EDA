@@ -7,7 +7,7 @@
 * j.fernandezramirez@cunef.edu
 * nina.odoux@cunef.edu
 
-# Ruta al repositorio: https://github.com/jackieferra02/practica1_EDA.git
+### Ruta al repositorio: https://github.com/jackieferra02/practica1_EDA.git
 
 # Curso: Aprendizaje Automático, CUNEF Universidad.
 
@@ -51,9 +51,9 @@ Los pasos incluyen analizar los datos, tratar valores perdidos y atípicos, apli
 
 
 
-# Notebook 00: Exploración general. 
-# Notebook 01: Tratamiento, correlaciones, missing y outlier.
-# Notebook 02: Codificación de variables categóricas y escalado.
-# Notebook 03: Variable Selección y Feature Engineering.
-# Notebook 04: Evaluación de modelos, selección.
-# Notebook 05: Explicabilidad.
+### Notebook 00: Exploración general. 
+### Notebook 01: Tratamiento, correlaciones, missing y outlier.
+### Notebook 02: Codificación de variables categóricas y escalado.
+### Notebook 03: Variable Selección y Feature Engineering.
+### Notebook 04: Evaluación de modelos, selección.
+### Notebook 05: Explicabilidad.
