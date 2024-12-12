@@ -1,11 +1,6 @@
 # Machine Learning
 
-# Práctica realizada por: Jacqueline Fernández Ramírez, Jazmín Fernández Ramírez y Nina Odoux.
-
-# Correos electrónicos:
-* jazmin.fernandez@cunef.edu
-* j.fernandezramirez@cunef.edu
-* nina.odoux@cunef.edu
+# Práctica realizada por: Jacqueline, Jazmín y Nina.
 
 ### Ruta al repositorio: https://github.com/jackieferra02/practica1_EDA.git
 
